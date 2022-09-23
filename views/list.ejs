@@ -3,15 +3,34 @@
 
 <head>
   <meta charset="utf-8">
-  <title>To Do List</title>
+  <title></title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-<%  if (kindOfDay === "Sunday" || kindOfDay === "Saturday") { %>
-    <h1 style="color:purple">It's a <%= kindOfDay %> ToDo List</h1>
-<%  } else { %>
-    <h1 style="color:blue">It's a <%= kindOfDay %> ToDo List</h1>
-<%  } %>
+  <div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+  </div>
+
+  <div class="box">
+    <% for (i=0; i<newListItem.length; i++) { %>
+    <div class="item">
+      <input type="checkbox">
+      <p> <%= newListItem[i] %> </p>
+    </div>
+
+    <% } %>
+
+    <form class="item" action="/" method="post">
+
+      <input id="newListItem" type="text" name="newItem" placeholder="New Item" autocomplete="off">
+
+      <button type="submit">+</button>
+    </form>
+  </div>
+
+
+
 
 </body>
 
